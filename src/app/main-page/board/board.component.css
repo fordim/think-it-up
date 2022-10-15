@@ -1,0 +1,78 @@
+.wrapper {
+  width: 1400px;
+  height: 449px;
+  background-color: sandybrown;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 1px solid black;
+}
+
+.board {
+  width: 800px;
+  height: 400px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.cards {
+  width: 200px;
+  height: 400px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.field {
+  width: 400px;
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.letters {
+  width: 200px;
+  height: 350px;
+}
+
+.card {
+  width: 150px;
+  height: 250px;
+  border: 1px solid black;
+  border-radius: 5px;
+}
+
+.card-category {
+  background-color: dodgerblue;
+}
+
+.card-letter {
+  background-color: red;
+}
+
+.open-card {
+  width: 250px;
+  height: 125px;
+  background-color: lightgrey;
+  border: 1px solid black;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.open-card-special {
+  height: 50px;
+  font-size: 20px;
+  line-height: 35px;
+}
+
+.open-card-letter {
+  font-size: 62px;
+  line-height: 125px;
+}
+
+.open-card-category {
+  font-size: 20px;
+  line-height: 35px;
+}

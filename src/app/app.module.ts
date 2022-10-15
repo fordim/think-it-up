@@ -3,10 +3,22 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { LayoutComponent } from './layout/layout.component';
+import { MainPageComponent } from './main-page/main-page.component';
+import { PlayersComponent } from './main-page/players/players.component';
+import { AddPlayerModalComponent } from './main-page/add-player-modal/add-player-modal.component';
+import { EventModalComponent } from './main-page/event-modal/event-modal.component';
+import { BoardComponent } from './main-page/board/board.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    LayoutComponent,
+    MainPageComponent,
+    PlayersComponent,
+    AddPlayerModalComponent,
+    EventModalComponent,
+    BoardComponent
   ],
   imports: [
     BrowserModule,

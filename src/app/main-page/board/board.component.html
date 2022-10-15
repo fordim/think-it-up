@@ -1,0 +1,22 @@
+<div class="wrapper">
+  <div class="board">
+    <div class="cards">
+      <div class="card card-category" (click)="openCategoryCard()"></div>
+    </div>
+    <div class="field">
+      <div class="open-card open-card-special">
+        Без спец условий
+        {{(openSpecialCategory$ | async)?.text}}
+      </div>
+      <div class="open-card open-card-category">
+        {{(openCategory$ | async)?.text}}
+      </div>
+      <div class="open-card open-card-letter">
+        {{openLetter$ | async}}
+      </div>
+    </div>
+    <div class="cards">
+      <div class="card card-letter" (click)="openLetterCard()"></div>
+    </div>
+  </div>
+</div>
