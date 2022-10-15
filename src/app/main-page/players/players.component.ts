@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import {GameService} from "../../services/game.service";
+import { GameService } from "../../services/game.service";
 import {PlayerService} from "../../services/player.service";
 
 @Component({
   selector: 'app-players',
   templateUrl: './players.component.html',
-  styleUrls: ['./players.component.css']
+  styleUrls: ['./players.component.scss']
 })
 export class PlayersComponent implements OnInit {
 

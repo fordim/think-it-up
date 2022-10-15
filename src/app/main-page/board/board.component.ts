@@ -4,12 +4,14 @@ import {GameService} from "../../services/game.service";
 @Component({
   selector: 'app-board',
   templateUrl: './board.component.html',
-  styleUrls: ['./board.component.css']
+  styleUrls: ['./board.component.scss']
 })
 export class BoardComponent implements OnInit {
-  openSpecialCategory$ = this._game.openSpecialCategory$;
   openCategory$ = this._game.openCategory$;
   openLetter$ = this._game.openLetter$;
+
+  questionIcon = '/assets/images/question-mark.svg';
+  lettersIcon = '/assets/images/abc-letters.svg';
 
   constructor(private _game: GameService) { }
 

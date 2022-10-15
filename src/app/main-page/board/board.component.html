@@ -1,22 +1,20 @@
 <div class="wrapper">
   <div class="board">
     <div class="cards">
-      <div class="card card-category" (click)="openCategoryCard()"></div>
+      <div class="card card-category" (click)="openCategoryCard()">
+        <img class="questionIcon" src="{{questionIcon}}" alt="">
+      </div>
     </div>
     <div class="field">
-      <div class="open-card open-card-special">
-        Без спец условий
-        {{(openSpecialCategory$ | async)?.text}}
-      </div>
       <div class="open-card open-card-category">
-        {{(openCategory$ | async)?.text}}
+        <div class="card-text">{{(openCategory$ | async)?.text}}</div>
       </div>
-      <div class="open-card open-card-letter">
-        {{openLetter$ | async}}
-      </div>
+      <div class="open-card open-card-letter">{{openLetter$ | async}}</div>
     </div>
     <div class="cards">
-      <div class="card card-letter" (click)="openLetterCard()"></div>
+      <div class="card card-letter" (click)="openLetterCard()">
+        <img class="lettersIcon" src="{{lettersIcon}}" alt="">
+      </div>
     </div>
   </div>
 </div>

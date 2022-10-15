@@ -10,7 +10,6 @@ import {PlayerService} from "./player.service";
 export class GameService {
   public categoryCards$ = new BehaviorSubject<any[]>([]);
   public letterCards$ = new BehaviorSubject<any[]>([]);
-  public openSpecialCategory$ = new BehaviorSubject({text: '', stars: 0});
   public openCategory$ = new BehaviorSubject({text: '', stars: 0});
   public openLetter$ = new BehaviorSubject<string>('');
 
@@ -21,7 +20,7 @@ export class GameService {
 
   public openCategoryCards(): void {
     //TODO check logic
-    if (this.openCategory$.value.text !== '' || this.openSpecialCategory$.value.text !== '') {
+    if (this.openCategory$.value.text !== '') {
       return;
     }
 
@@ -42,7 +41,6 @@ export class GameService {
   }
 
   public clearCards(): void {
-    this.openSpecialCategory$.next({text: '', stars: 0});
     this.openCategory$.next({text: '', stars: 0});
     this.openLetter$.next('');
   }

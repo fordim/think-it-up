@@ -1,11 +1,9 @@
 .wrapper {
   width: 1400px;
-  height: 449px;
-  background-color: sandybrown;
+  height: 500px;
   display: flex;
   align-items: center;
   justify-content: center;
-  border-bottom: 1px solid black;
 }
 
 .board {
@@ -38,41 +36,55 @@
 }
 
 .card {
-  width: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 180px;
   height: 250px;
-  border: 1px solid black;
+  border: 1px solid #0080C1;
   border-radius: 5px;
 }
 
 .card-category {
-  background-color: dodgerblue;
+  background-color: #00C1FF;
 }
 
 .card-letter {
-  background-color: red;
+  background-color: #00C1FF;
 }
 
 .open-card {
-  width: 250px;
-  height: 125px;
-  background-color: lightgrey;
-  border: 1px solid black;
+  width: 300px;
+  height: 180px;
+  background-color: white;
+  border: 1px solid #0080C1;
   border-radius: 5px;
   text-align: center;
+  color: #004980;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
 }
 
-.open-card-special {
-  height: 50px;
-  font-size: 20px;
-  line-height: 35px;
+.card-text {
+  width: 225px;
 }
 
 .open-card-letter {
-  font-size: 62px;
-  line-height: 125px;
+  font-size: 125px;
+  font-weight: bold;
 }
 
 .open-card-category {
-  font-size: 20px;
-  line-height: 35px;
+  font-size: 25px;
+}
+
+.questionIcon {
+  width: 175px;
+  height: 175px;
+}
+
+.lettersIcon {
+  width: 125px;
+  height: 125px;
 }
