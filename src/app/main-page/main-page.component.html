@@ -1,5 +1,13 @@
-<app-layout></app-layout>
-<body>
-  <app-board></app-board>
-  <app-players></app-players>
-</body>
+<div class="root">
+  <div class="modal" *ngIf="(newGameModal$ | async)" >
+    <app-new-game-modal></app-new-game-modal>
+  </div>
+    <div class="modal" *ngIf="(addPlayerModal$ | async)">
+      <app-add-player-modal></app-add-player-modal>
+    </div>
+  <body [class.ban-body]="(newGameModal$ | async) || (addPlayerModal$ | async)">
+    <app-layout></app-layout>
+    <app-board></app-board>
+    <app-players></app-players>
+  </body>
+</div>

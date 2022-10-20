@@ -1,1 +1,15 @@
-<p>add-player-modal works!</p>
+<div class="wrapper">
+  <div class="modal-header">
+    <img class="closeIcon" src="{{closeIcon}}" alt="" (click)="closeModal()">
+    <h2>Добавить игрока</h2>
+  </div>
+  <div class="modal-content">
+    <form class="form" #form="ngForm" (ngSubmit)="addNewPlayer(form)" novalidate>
+      <div class="field">
+        <label>Игрок: </label>
+        <input type="text" name="name" ngModel maxlength="25" minlength="3" required>
+      </div>
+      <button class="button">Добавить игрока</button>
+    </form>
+  </div>
+</div>

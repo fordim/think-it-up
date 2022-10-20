@@ -12,13 +12,36 @@
 .player {
   margin: 5px;
   display: flex;
-  width: 100px;
+  min-width: 100px;
+  padding: 0 5px;
   height: 75px;
   background-color: #E6A8FF;
   border: 1px solid #AD61FF;
   flex-direction: column;
   align-items: center;
   border-radius: 10px;
+  position: relative;
+}
+
+.player.-delete {
+  animation: shake 1.5s;
+  animation-iteration-count: infinite;
+  background-color: #FFC0C0;
+  border: 1px solid #DB0030;
+}
+
+@keyframes shake {
+  0% { transform: translate(1px, 1px) rotate(0deg); }
+  10% { transform: translate(-1px, -2px) rotate(-1deg); }
+  20% { transform: translate(-3px, 0px) rotate(1deg); }
+  30% { transform: translate(3px, 2px) rotate(0deg); }
+  40% { transform: translate(1px, -1px) rotate(1deg); }
+  50% { transform: translate(-1px, 2px) rotate(-1deg); }
+  60% { transform: translate(-3px, 1px) rotate(0deg); }
+  70% { transform: translate(3px, 1px) rotate(-1deg); }
+  80% { transform: translate(-1px, -1px) rotate(1deg); }
+  90% { transform: translate(1px, 2px) rotate(0deg); }
+  100% { transform: translate(1px, -2px) rotate(-1deg); }
 }
 
 button {
@@ -28,6 +51,7 @@ button {
   border: 1px solid #AD61FF;
   color: #AD61FF;
   font-size: 22px;
+  cursor: pointer;
 }
 
 .name {
@@ -39,4 +63,13 @@ button {
   margin-top: 4px;
   font-size: 12px;
   line-height: 25px;
+}
+
+.deleteIcon {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  top: -21px;
+  right: -18px;
 }

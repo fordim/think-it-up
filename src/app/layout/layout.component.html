@@ -1,6 +1,8 @@
 <div class="wrapper">
-  <button class="button">Новая игра</button>
-  <button class="button">Сыграть ещё раз</button>
-  <button class="button">Добавить игрока</button>
-  <button class="button">Удалить игрока</button>
+  <button class="button" (click)="newGame()">Новая игра</button>
+  <button class="button" (click)="resetGame()">Сыграть ещё раз</button>
+  <button class="button" (click)="addPlayer()">Добавить игрока</button>
+  <button class="button" (click)="deletePlayer()" *ngIf="!(isDeleteForm$ | async)">Удалить игрока</button>
+  <button class="button cancel" (click)="cancelDeletePlayer()" *ngIf="isDeleteForm$ | async">Отменить удаление</button>
+  <button class="button" (click)="finishGame()">Завершить игру</button>
 </div>

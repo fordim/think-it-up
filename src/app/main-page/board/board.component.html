@@ -4,6 +4,7 @@
       <div class="card card-category" (click)="openCategoryCard()">
         <img class="questionIcon" src="{{questionIcon}}" alt="">
       </div>
+      <span class="cards-count">Карточки: {{ categoryCardsCount$ | async }}</span>
     </div>
     <div class="field">
       <div class="open-card open-card-category">
@@ -15,6 +16,7 @@
       <div class="card card-letter" (click)="openLetterCard()">
         <img class="lettersIcon" src="{{lettersIcon}}" alt="">
       </div>
+      <span class="cards-count">Карточки: {{ letterCardsCount$ | async }}</span>
     </div>
   </div>
 </div>

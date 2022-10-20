@@ -15,10 +15,14 @@
 
 .cards {
   width: 200px;
-  height: 400px;
   display: flex;
-  justify-content: space-around;
+  flex-direction: column;
   align-items: center;
+}
+
+.cards-count {
+  font-size: 12px;
+  font-style: italic;
 }
 
 .field {
@@ -43,6 +47,9 @@
   height: 250px;
   border: 1px solid #0080C1;
   border-radius: 5px;
+  cursor: pointer;
+  margin-top: 80px;
+  margin-bottom: 10px;
 }
 
 .card-category {

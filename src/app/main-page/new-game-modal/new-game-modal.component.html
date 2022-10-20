@@ -1,0 +1,22 @@
+<div class="wrapper">
+  <div class="modal-header">
+    <img class="closeIcon" src="{{closeIcon}}" alt="" (click)="closeModal()">
+    <h2>Новая игра</h2>
+  </div>
+  <div class="modal-content">
+    <form class="form" #form="ngForm" (ngSubmit)="addPlayers(form)" novalidate *ngIf="playersCount === 0">
+      <div>
+        <label>Количество игроков: </label>
+        <input type="number" min="0" name="playersCount" ngModel required>
+      </div>
+      <button class="button">Принять</button>
+    </form>
+    <form class="form" #form="ngForm" (ngSubmit)="startNewGame(form)" novalidate *ngIf="playersCount !== 0">
+      <div class="field" *ngFor="let player of newPlayers; let i = index">
+        <label>Игрок №{{ i + 1}}: </label>
+        <input type="text" name="{{ i }}" ngModel maxlength="25" minlength="2" required>
+      </div>
+      <button class="button">Начать игру</button>
+    </form>
+  </div>
+</div>

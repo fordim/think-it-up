@@ -1,6 +1,25 @@
+.root {
+  display: flex;
+  justify-content: center;
+}
+
+.modal {
+  position: absolute;
+  visibility: visible;
+  z-index: 5;
+  margin-top: 200px;
+}
+
+.ban-body {
+  background-image: none;
+  background-color: darkgrey;
+  opacity: 0.4;
+  z-index: 3;
+  pointer-events: none;
+}
+
 body {
   display: flex;
-  width: 1400px;
   background-color: #FFF4C5;
   flex-direction: column;
   border-radius: 5px;

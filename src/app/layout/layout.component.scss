@@ -21,9 +21,13 @@
   border: 1px solid #3772e8;
   font-size: 14px;
   padding: 5px;
+  cursor: pointer;
 
   & + & {
     margin-top: 8px;
   }
 }
 
+.cancel {
+  background-color: palevioletred;
+}

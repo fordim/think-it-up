@@ -10,15 +10,19 @@ import {PlayerService} from "../../services/player.service";
 export class PlayersComponent implements OnInit {
 
   players$ = this._player.players$;
+  deleteIcon = '/assets/images/delete-player.svg';
+  isDeleteForm$ = this._player.isDeleteForm;
 
   constructor(private _game: GameService, private _player: PlayerService) { }
 
   ngOnInit(): void {
   }
 
-  public addScore(index: number): void {
-    console.log(index);
-    this._game.addScore(index);
-    this._game.clearCards();
+  public addScore(playerId: number): void {
+    this._game.addScore(playerId);
+  }
+
+  deletePlayer(playerId: number): void {
+    this._player.deletePlayer(playerId);
   }
 }

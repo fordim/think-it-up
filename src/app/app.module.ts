@@ -9,6 +9,8 @@ import { PlayersComponent } from './main-page/players/players.component';
 import { AddPlayerModalComponent } from './main-page/add-player-modal/add-player-modal.component';
 import { EventModalComponent } from './main-page/event-modal/event-modal.component';
 import { BoardComponent } from './main-page/board/board.component';
+import { NewGameModalComponent } from './main-page/new-game-modal/new-game-modal.component';
+import {FormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -18,11 +20,13 @@ import { BoardComponent } from './main-page/board/board.component';
     PlayersComponent,
     AddPlayerModalComponent,
     EventModalComponent,
-    BoardComponent
+    BoardComponent,
+    NewGameModalComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

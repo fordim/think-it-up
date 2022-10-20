@@ -9,6 +9,8 @@ import {GameService} from "../../services/game.service";
 export class BoardComponent implements OnInit {
   openCategory$ = this._game.openCategory$;
   openLetter$ = this._game.openLetter$;
+  categoryCardsCount$ = this._game.categoryCardsCount$;
+  letterCardsCount$ = this._game.letterCardsCount$;
 
   questionIcon = '/assets/images/question-mark.svg';
   lettersIcon = '/assets/images/abc-letters.svg';
