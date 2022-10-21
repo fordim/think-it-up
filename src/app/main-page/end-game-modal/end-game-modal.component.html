@@ -1,0 +1,15 @@
+<div class="wrapper">
+  <div class="modal-header">
+    <img class="closeIcon" src="{{ closeIcon }}" alt="" (click)="closeModal()">
+    <h2>Игра окончена:</h2>
+  </div>
+  <div class="modal-content">
+    <div *ngFor="let winner of winners$ | async; let i = index" class="player">
+      <span class="place">{{ i + 1 }} место: </span>
+      <span class="name bold">{{ winner.name }}</span>
+      <span class="score"> - score: </span>
+      <span class="bold">{{ winner.score }}</span>
+    </div>
+    <button class="button" (click)="actionModal()">Сыграть ещё раз</button>
+  </div>
+</div>

@@ -54,6 +54,12 @@ button {
   cursor: pointer;
 }
 
+button.-minus {
+  color: #DB0030;
+  background-color: #FFC0C0;
+  border: 1px solid #DB0030;
+}
+
 .name {
   margin-top: 4px;
   font-weight: bold;

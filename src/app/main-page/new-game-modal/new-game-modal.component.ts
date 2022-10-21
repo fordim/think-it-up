@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {newPlayer} from "../../constants/modal";
+import {newPlayer} from "../../constants/interface";
 import {NgForm} from "@angular/forms";
 import {PlayerService} from "../../services/player.service";
 import {BoardService} from "../../services/board.service";

@@ -11,15 +11,25 @@ export class PlayersComponent implements OnInit {
 
   players$ = this._player.players$;
   deleteIcon = '/assets/images/delete-player.svg';
-  isDeleteForm$ = this._player.isDeleteForm;
+  isDeleteForm$ = this._player.isDeleteForm$;
+  isMinusScoreForm$ = this._player.isMinusScoreForm$;
 
   constructor(private _game: GameService, private _player: PlayerService) { }
 
   ngOnInit(): void {
   }
 
-  public addScore(playerId: number): void {
-    this._game.addScore(playerId);
+  public changeScore(playerId: number, score: number): void {
+    if (this.isMinusScoreForm$.value) {
+      if (score === 0) {
+        return;
+      }
+
+      this._player.changeScore(playerId, score - 1);
+      return;
+    }
+
+    this._game.addScore(playerId, score);
   }
 
   deletePlayer(playerId: number): void {

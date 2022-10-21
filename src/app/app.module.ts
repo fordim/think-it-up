@@ -7,11 +7,11 @@ import { LayoutComponent } from './layout/layout.component';
 import { MainPageComponent } from './main-page/main-page.component';
 import { PlayersComponent } from './main-page/players/players.component';
 import { AddPlayerModalComponent } from './main-page/add-player-modal/add-player-modal.component';
-import { EventModalComponent } from './main-page/event-modal/event-modal.component';
 import { BoardComponent } from './main-page/board/board.component';
 import { NewGameModalComponent } from './main-page/new-game-modal/new-game-modal.component';
 import {FormsModule} from "@angular/forms";
 import { GeneralModalComponent } from './main-page/general-modal/general-modal.component';
+import { EndGameModalComponent } from './main-page/end-game-modal/end-game-modal.component';
 
 @NgModule({
   declarations: [
@@ -20,10 +20,10 @@ import { GeneralModalComponent } from './main-page/general-modal/general-modal.c
     MainPageComponent,
     PlayersComponent,
     AddPlayerModalComponent,
-    EventModalComponent,
     BoardComponent,
     NewGameModalComponent,
-    GeneralModalComponent
+    GeneralModalComponent,
+    EndGameModalComponent
   ],
   imports: [
     BrowserModule,

@@ -1,16 +1,21 @@
 import { Injectable } from '@angular/core';
 import {BehaviorSubject} from "rxjs";
-import {FINISH_GAME, RESET_GAME} from "../constants/modal";
+import {ACCEPT, FINISH_GAME, ModalType, RESET_GAME} from "../constants/consts";
+import {GeneralModal} from "../constants/interface";
 
 @Injectable({
   providedIn: 'root'
 })
 export class BoardService {
   newGameModal$ = new BehaviorSubject<boolean>(false);
+  endGameModal$ = new BehaviorSubject<boolean>(false);
   addPlayerModal$ = new BehaviorSubject<boolean>(false);
-  generalModal$ = new BehaviorSubject<boolean>(false);
-  generalModalText$ = new BehaviorSubject<string>('');
-  generalModalType$ = new BehaviorSubject<string>('');
+  hasGeneralModal$ = new BehaviorSubject<boolean>(false);
+  generalModal$ = new BehaviorSubject<GeneralModal>({
+    text: RESET_GAME,
+    type: ModalType.resetGame,
+    button: ACCEPT
+  });
 
   constructor() { }
 
@@ -31,20 +36,26 @@ export class BoardService {
   }
 
   public openGeneralModal(type: string): void {
-    if (type === RESET_GAME) {
-      this.generalModalText$.next('Сыграть ещё раз?');
-      this.generalModalType$.next(type);
-      this.generalModal$.next(true);
+    if (type === ModalType.resetGame) {
+      this.generalModal$.next( { text: RESET_GAME, type: ModalType.resetGame, button: ACCEPT } );
+      this.hasGeneralModal$.next(true);
     }
 
-    if (type === FINISH_GAME) {
-      this.generalModalText$.next('Завершить игру?');
-      this.generalModalType$.next(type);
-      this.generalModal$.next(true);
+    if (type === ModalType.finishGame) {
+      this.generalModal$.next( { text: FINISH_GAME, type: ModalType.finishGame, button: ACCEPT } );
+      this.hasGeneralModal$.next(true);
     }
   }
 
   public closeGeneralModal(): void {
-    this.generalModal$.next(false);
+    this.hasGeneralModal$.next(false);
+  }
+
+  public openEndGameModal(): void {
+    this.endGameModal$.next(true);
+  }
+
+  public closeEndGameModal(): void {
+    this.endGameModal$.next(false);
   }
 }

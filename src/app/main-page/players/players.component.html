@@ -1,8 +1,8 @@
 <div *ngIf="(players$ | async)?.length !== 0" class="players">
   <div *ngFor="let player of players$ | async" class="player" [class.-delete]="isDeleteForm$ | async">
-    <img class="deleteIcon" src="{{deleteIcon}}" alt="" (click)="deletePlayer(player.id)" *ngIf="isDeleteForm$ | async">
-    <button (click)="addScore(player.id)">+</button>
-    <div class="name">{{player.name}}</div>
-    <div class="score">Score: {{player.score}}</div>
+    <img class="deleteIcon" src="{{ deleteIcon }}" alt="" (click)="deletePlayer(player.id)" *ngIf="isDeleteForm$ | async">
+    <button [class.-minus]="isMinusScoreForm$ | async" (click)="changeScore(player.id, player.score)">+</button>
+    <div class="name">{{ player.name }}</div>
+    <div class="score">Score: {{ player.score }}</div>
   </div>
 </div>

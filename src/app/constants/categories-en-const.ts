@@ -1,4 +1,4 @@
-import {CategoryCard} from "./modal";
+import {CategoryCard} from "./interface";
 
 export const CATEGORIES: CategoryCard[] = [
   {

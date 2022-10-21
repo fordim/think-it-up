@@ -3,7 +3,8 @@ import {BehaviorSubject} from "rxjs";
 import {CATEGORIES} from "../constants/categories-en-const";
 import {LETTERS} from "../constants/letters-en-const";
 import {PlayerService} from "./player.service";
-import {CategoryCard} from "../constants/modal";
+import {CategoryCard} from "../constants/interface";
+import {BoardService} from "./board.service";
 
 @Injectable({
   providedIn: 'root'
@@ -12,18 +13,17 @@ export class GameService {
   public categoryCards$ = new BehaviorSubject<CategoryCard[]>([]);
   public categoryCardsCount$ = new BehaviorSubject<number>(0);
   public letterCards$ = new BehaviorSubject<string[]>([]);
-  public letterCardsCount$ = new BehaviorSubject<number>(0);
   public openCategory$ = new BehaviorSubject<CategoryCard>({text: '', stars: 1});
   public openLetter$ = new BehaviorSubject<string>('');
 
-  constructor(private _player: PlayerService) {
+  constructor(private _player: PlayerService, private _board: BoardService) {
     this.initiateGameService();
   }
 
   public openCategoryCards(): void {
     const categoryCards = this.categoryCards$.value;
     if (categoryCards.length === 0) {
-      return;
+      this._board.openEndGameModal();
     }
 
     this.openCategory$.next(categoryCards.pop()!);
@@ -32,13 +32,13 @@ export class GameService {
   }
 
   public openLetterCards(): void {
-    const letterCards = this.letterCards$.value;
+    let letterCards = this.letterCards$.value;
     if (letterCards.length === 0) {
-      return;
+      this.letterCards$.next(this.shuffleLetterCards());
+      letterCards = this.letterCards$.value;
     }
 
     this.openLetter$.next(letterCards.pop()!);
-    this.letterCardsCount$.next(this.letterCards$.value.length);
     this.updateLetterCards();
   }
 
@@ -47,9 +47,9 @@ export class GameService {
     this.openLetter$.next('');
   }
 
-  public addScore(playerId: number): void {
+  public addScore(playerId: number, score: number): void {
     const stars = this.openCategory$.value.stars;
-    this._player.addScore(playerId, stars);
+    this._player.changeScore(playerId, score + stars);
   }
 
   public newGame(): void {
@@ -58,7 +58,6 @@ export class GameService {
     this.letterCards$.next(this.shuffleLetterCards());
     this.openLetter$.next('');
     this.categoryCardsCount$.next(this.categoryCards$.value.length);
-    this.letterCardsCount$.next(this.letterCards$.value.length);
     this.updateCategoryCards();
     this.updateLetterCards();
   }
@@ -103,6 +102,5 @@ export class GameService {
       : this.openLetter$.next(JSON.parse(openLetterStore) as string)
 
     this.categoryCardsCount$.next(this.categoryCards$.value.length);
-    this.letterCardsCount$.next(this.letterCards$.value.length);
   }
 }

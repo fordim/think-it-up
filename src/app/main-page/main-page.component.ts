@@ -9,7 +9,8 @@ import {BoardService} from "../services/board.service";
 export class MainPageComponent implements OnInit {
   newGameModal$ = this._board.newGameModal$;
   addPlayerModal$ = this._board.addPlayerModal$;
-  generalModal$ = this._board.generalModal$;
+  hasGeneralModal$ = this._board.hasGeneralModal$;
+  endGameModal$ = this._board.endGameModal$;
 
   constructor(private _board: BoardService) { }
 

@@ -2,15 +2,15 @@ import {Component, OnInit} from '@angular/core';
 import {BoardService} from "../../services/board.service";
 import {PlayerService} from "../../services/player.service";
 import {GameService} from "../../services/game.service";
+import {ModalType} from "../../constants/consts";
 
 @Component({
   selector: 'app-general-modal',
   templateUrl: './general-modal.component.html',
-  styleUrls: ['./general-modal.component.css']
+  styleUrls: ['./general-modal.component.scss']
 })
 export class GeneralModalComponent implements OnInit {
-  generalModalText$ = this._board.generalModalText$;
-  generalModalType$ = this._board.generalModalType$;
+  generalModal$ = this._board.generalModal$;
 
   closeIcon = '/assets/images/popup-close.svg';
 
@@ -23,13 +23,16 @@ export class GeneralModalComponent implements OnInit {
     this._board.closeGeneralModal();
   }
 
-  resetGame(): void {
-    this._player.resetScore();
-    this._game.newGame();
-    this._board.closeGeneralModal();
-  }
+  actionModal(): void {
+    if (this.generalModal$.value.type === ModalType.resetGame) {
+      this._player.resetScore();
+      this._game.newGame();
+      this._board.closeGeneralModal();
+    }
 
-  finishGame(): void {
-    this._board.closeGeneralModal();
+    if (this.generalModal$.value.type === ModalType.finishGame) {
+      this._board.openEndGameModal();
+      this._board.closeGeneralModal();
+    }
   }
 }
