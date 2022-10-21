@@ -9,10 +9,10 @@ import {BoardService} from "../services/board.service";
 export class MainPageComponent implements OnInit {
   newGameModal$ = this._board.newGameModal$;
   addPlayerModal$ = this._board.addPlayerModal$;
+  generalModal$ = this._board.generalModal$;
 
   constructor(private _board: BoardService) { }
 
   ngOnInit(): void {
   }
-
 }

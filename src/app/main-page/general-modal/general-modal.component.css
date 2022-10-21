@@ -1,0 +1,38 @@
+.wrapper {
+  width: 300px;
+  background-color: #EFCEEB;
+  border: 1px solid #AD61FF;
+  border-radius: 5px;
+  color: #004980;
+  padding: 10px;
+}
+
+.modal-header {
+  text-align: center;
+  padding: 10px;
+}
+
+.modal-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.button {
+  margin: 10px 0;
+  background: #009EE4;
+  color: white;
+  border-radius: 5px;
+  line-height: 20px;
+  border: 1px solid #3772e8;
+  font-size: 14px;
+  padding: 5px 15px;
+  cursor: pointer;
+}
+
+.closeIcon {
+  position: absolute;
+  cursor: pointer;
+  top: 5px;
+  right: 5px;
+}

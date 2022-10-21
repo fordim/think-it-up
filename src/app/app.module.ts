@@ -11,6 +11,7 @@ import { EventModalComponent } from './main-page/event-modal/event-modal.compone
 import { BoardComponent } from './main-page/board/board.component';
 import { NewGameModalComponent } from './main-page/new-game-modal/new-game-modal.component';
 import {FormsModule} from "@angular/forms";
+import { GeneralModalComponent } from './main-page/general-modal/general-modal.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import {FormsModule} from "@angular/forms";
     AddPlayerModalComponent,
     EventModalComponent,
     BoardComponent,
-    NewGameModalComponent
+    NewGameModalComponent,
+    GeneralModalComponent
   ],
   imports: [
     BrowserModule,

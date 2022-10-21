@@ -1,0 +1,10 @@
+<div class="wrapper">
+  <div class="modal-header">
+    <img class="closeIcon" src="{{closeIcon}}" alt="" (click)="closeModal()">
+    <h2>{{ generalModalText$ | async }}</h2>
+  </div>
+  <div class="modal-content">
+    <button class="button" *ngIf="(generalModalType$ | async) === 'resetGame'" (click)="resetGame()">Принять</button>
+    <button class="button" *ngIf="(generalModalType$ | async) === 'finishGame'" (click)="finishGame()">Принять</button>
+  </div>
+</div>

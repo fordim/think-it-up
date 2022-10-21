@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {BoardService} from "../services/board.service";
 import {PlayerService} from "../services/player.service";
-import {GameService} from "../services/game.service";
+import {FINISH_GAME, RESET_GAME} from "../constants/modal";
 
 @Component({
   selector: 'app-layout',
@@ -12,7 +12,7 @@ export class LayoutComponent implements OnInit {
 
   isDeleteForm$ = this._player.isDeleteForm;
 
-  constructor(private _board: BoardService, private _player: PlayerService, private  _game: GameService) { }
+  constructor(private _board: BoardService, private _player: PlayerService) { }
 
   ngOnInit(): void {
   }
@@ -22,13 +22,11 @@ export class LayoutComponent implements OnInit {
   }
 
   public resetGame(): void {
-    this._player.resetScore();
-    this._game.newGame();
+    this._board.openGeneralModal(RESET_GAME);
   }
 
   public addPlayer(): void {
     this._board.openAddPlayerModal();
-
   }
 
   public deletePlayer(): void {
@@ -40,5 +38,6 @@ export class LayoutComponent implements OnInit {
   }
 
   public finishGame(): void {
+    this._board.openGeneralModal(FINISH_GAME);
   }
 }
