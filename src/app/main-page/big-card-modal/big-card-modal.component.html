@@ -1,0 +1,6 @@
+<div class="wrapper">
+  <img class="closeIcon" src="{{ closeIcon }}" alt="" (click)="closeModal()">
+  <div class="modal-content">
+    <div class="card-text" >{{ (openCategory$ | async)?.text }}</div>
+  </div>
+</div>

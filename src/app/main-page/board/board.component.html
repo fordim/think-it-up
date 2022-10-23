@@ -7,7 +7,7 @@
       <span class="cards-count">Карточки: {{ categoryCardsCount$ | async }}</span>
     </div>
     <div class="field">
-      <div class="open-card open-card-category">
+      <div class="open-card open-card-category" (click)="openBigCard()">
         <div class="card-text">{{(openCategory$ | async)?.text}}</div>
       </div>
       <div class="open-card open-card-letter">{{openLetter$ | async}}</div>

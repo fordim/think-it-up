@@ -1,0 +1,28 @@
+.wrapper {
+  width: 600px;
+  height: 360px;
+  background-color: white;
+  border: 1px solid #0080C1;
+  border-radius: 5px;
+  text-align: center;
+  color: #004980;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  font-size: 64px;
+  font-weight: bold;
+  z-index: 5;
+}
+
+.closeIcon {
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  cursor: pointer;
+  top: 15px;
+  right: 15px;
+}
+
+.card-text {
+  width: 500px;
+}

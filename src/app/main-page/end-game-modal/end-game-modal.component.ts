@@ -3,7 +3,7 @@ import { BoardService } from "../../services/board.service";
 import { PlayerService } from "../../services/player.service";
 import { GameService } from "../../services/game.service";
 import { BehaviorSubject } from "rxjs";
-import { Winner } from "../../constants/interface";
+import { Player } from "../../constants/interface";
 
 @Component({
   selector: 'app-end-game-modal',
@@ -14,7 +14,7 @@ export class EndGameModalComponent implements OnInit {
 
   closeIcon = '/assets/images/popup-close.svg';
 
-  winners$ = new BehaviorSubject<Winner[]>([]);
+  winners$ = new BehaviorSubject<Player[]>([]);
 
   constructor(private _board: BoardService, private _player: PlayerService, private  _game: GameService) { }
 

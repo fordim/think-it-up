@@ -11,7 +11,16 @@
   <div class="modal" *ngIf="(endGameModal$ | async)">
     <app-end-game-modal></app-end-game-modal>
   </div>
-  <body [class.ban-body]="(newGameModal$ | async) || (addPlayerModal$ | async) || (hasGeneralModal$ | async) || (endGameModal$ | async)">
+  <div class="modal" *ngIf="(bigCardModal$ | async)">
+    <app-big-card-modal></app-big-card-modal>
+  </div>
+  <body
+    [class.ban-body]="(newGameModal$ | async)
+    || (addPlayerModal$ | async)
+    || (hasGeneralModal$ | async)
+    || (endGameModal$ | async)
+    || (bigCardModal$ | async)
+    ">
     <app-layout></app-layout>
     <app-board></app-board>
     <app-players></app-players>

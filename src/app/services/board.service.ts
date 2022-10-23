@@ -11,6 +11,7 @@ export class BoardService {
   endGameModal$ = new BehaviorSubject<boolean>(false);
   addPlayerModal$ = new BehaviorSubject<boolean>(false);
   hasGeneralModal$ = new BehaviorSubject<boolean>(false);
+  bigCardModal$ = new BehaviorSubject<boolean>(false);
   generalModal$ = new BehaviorSubject<GeneralModal>({
     text: RESET_GAME,
     type: ModalType.resetGame,
@@ -57,5 +58,13 @@ export class BoardService {
 
   public closeEndGameModal(): void {
     this.endGameModal$.next(false);
+  }
+
+  public openBigCardModal(): void {
+    this.bigCardModal$.next(true);
+  }
+
+  public closeBigCardModal(): void {
+    this.bigCardModal$.next(false);
   }
 }

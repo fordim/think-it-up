@@ -1,6 +1,7 @@
 .root {
   display: flex;
   justify-content: center;
+  font-family: Arial, serif;
 }
 
 .modal {
@@ -14,7 +15,6 @@
   background-image: none;
   background-color: darkgrey;
   opacity: 0.4;
-  z-index: 3;
   pointer-events: none;
 }
 
@@ -23,5 +23,4 @@ body {
   background-color: #FFF4C5;
   flex-direction: column;
   border-radius: 5px;
-  font-family: Arial, serif;
 }

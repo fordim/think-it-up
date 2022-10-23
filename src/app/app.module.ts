@@ -12,6 +12,7 @@ import { NewGameModalComponent } from './main-page/new-game-modal/new-game-modal
 import {FormsModule} from "@angular/forms";
 import { GeneralModalComponent } from './main-page/general-modal/general-modal.component';
 import { EndGameModalComponent } from './main-page/end-game-modal/end-game-modal.component';
+import { BigCardModalComponent } from './main-page/big-card-modal/big-card-modal.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { EndGameModalComponent } from './main-page/end-game-modal/end-game-modal
     BoardComponent,
     NewGameModalComponent,
     GeneralModalComponent,
-    EndGameModalComponent
+    EndGameModalComponent,
+    BigCardModalComponent
   ],
   imports: [
     BrowserModule,

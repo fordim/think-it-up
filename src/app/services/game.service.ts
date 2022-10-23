@@ -24,6 +24,7 @@ export class GameService {
     const categoryCards = this.categoryCards$.value;
     if (categoryCards.length === 0) {
       this._board.openEndGameModal();
+      return;
     }
 
     this.openCategory$.next(categoryCards.pop()!);

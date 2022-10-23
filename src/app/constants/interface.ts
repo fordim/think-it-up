@@ -6,12 +6,6 @@ export interface Player {
   score: number
 }
 
-export interface Winner {
-  place: number,
-  name: string,
-  score: number
-}
-
 export interface newPlayer {
   name: string
 }

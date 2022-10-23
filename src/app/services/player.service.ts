@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
-import {Player, Winner} from "../constants/interface";
-import {BehaviorSubject} from "rxjs";
+import { Player } from "../constants/interface";
+import { BehaviorSubject } from "rxjs";
 
 @Injectable({
   providedIn: 'root'
@@ -75,7 +75,7 @@ export class PlayerService {
     this.updatePlayers(changePlayersScore);
   }
 
-  public getWinners(): Winner[] {
+  public getWinners(): Player[] {
     const players = this.getPlayers().slice(0);
 
     //Bubble sort
@@ -87,17 +87,12 @@ export class PlayerService {
       }
     }
 
-    //TODO много 1-х или 2-х мест
-    // const firstPlace = players.shift();
+    const highScore = players[0]['score'];
+    console.log(highScore);
 
-    return players.slice(0, 3).map(player => {
-      return {
-        //TODO place
-        place: 1,
-        name: player.name,
-        score: player.score
-      }
-    });
+    players.filter( player => player.score === highScore);
+
+    return players.filter( player => player.score === highScore);
   }
 
   private getPlayers(): Player[] {
