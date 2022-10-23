@@ -2,8 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { BoardService } from "../../services/board.service";
 import { PlayerService } from "../../services/player.service";
 import { GameService } from "../../services/game.service";
-import { BehaviorSubject } from "rxjs";
+import { BehaviorSubject, delay } from "rxjs";
 import { Player } from "../../constants/interface";
+import { DEFAULT_CONFETTI_SETTINGS, playConfetti } from "../play-confetti";
 
 @Component({
   selector: 'app-end-game-modal',
@@ -20,6 +21,16 @@ export class EndGameModalComponent implements OnInit {
 
   ngOnInit(): void {
     this.winners$.next(this._player.getWinners());
+
+    playConfetti({
+      ...DEFAULT_CONFETTI_SETTINGS,
+      origin: {
+        y: 0.5,
+        x: 0.5,
+      },
+    })
+      .pipe(delay(1000))
+      .subscribe(() => {});
   }
 
   closeModal(): void {
