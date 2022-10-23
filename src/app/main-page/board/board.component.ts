@@ -18,6 +18,11 @@ export class BoardComponent {
   constructor(private _game: GameService, private _board: BoardService) { }
 
   public openCategoryCard(): void {
+    if (this.categoryCardsCount$.value === 0) {
+      this._board.openEndGameModal();
+      return;
+    }
+
     this._game.openCategoryCards();
   }
 

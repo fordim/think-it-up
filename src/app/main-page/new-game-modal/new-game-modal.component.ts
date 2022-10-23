@@ -1,16 +1,16 @@
-import { Component, OnInit } from '@angular/core';
-import {newPlayer} from "../../constants/interface";
-import {NgForm} from "@angular/forms";
-import {PlayerService} from "../../services/player.service";
-import {BoardService} from "../../services/board.service";
-import {GameService} from "../../services/game.service";
+import { Component } from '@angular/core';
+import { newPlayer } from "../../constants/interface";
+import { NgForm } from "@angular/forms";
+import { PlayerService } from "../../services/player.service";
+import { BoardService } from "../../services/board.service";
+import { GameService } from "../../services/game.service";
 
 @Component({
   selector: 'app-new-game-modal',
   templateUrl: './new-game-modal.component.html',
   styleUrls: ['./new-game-modal.component.scss']
 })
-export class NewGameModalComponent implements OnInit {
+export class NewGameModalComponent {
 
   newPlayers: newPlayer[] = [];
   playersCount: number = 0;
@@ -18,9 +18,6 @@ export class NewGameModalComponent implements OnInit {
   closeIcon = '/assets/images/popup-close.svg';
 
   constructor(private _player: PlayerService, private _board: BoardService, private _game: GameService) { }
-
-  ngOnInit(): void {
-  }
 
   addPlayers(form: NgForm): void {
     const players = form.value.playersCount;

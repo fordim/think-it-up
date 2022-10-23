@@ -1,10 +1,12 @@
 import { Component } from '@angular/core';
 import { BoardService } from "../services/board.service";
+import { FADE_IN_BIG_CARD_ANIMATION, FADE_IN_MODAL_ANIMATION } from "./animations";
 
 @Component({
   selector: 'app-main-page',
   templateUrl: './main-page.component.html',
-  styleUrls: ['./main-page.component.scss']
+  styleUrls: ['./main-page.component.scss'],
+  animations: [FADE_IN_BIG_CARD_ANIMATION, FADE_IN_MODAL_ANIMATION],
 })
 export class MainPageComponent {
   newGameModal$ = this._board.newGameModal$;

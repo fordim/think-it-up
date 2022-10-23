@@ -1,17 +1,17 @@
 <div class="root">
-  <div class="modal" *ngIf="(newGameModal$ | async)" >
+  <div class="modal" @fadeInModal *ngIf="(newGameModal$ | async)" >
     <app-new-game-modal></app-new-game-modal>
   </div>
-  <div class="modal" *ngIf="(addPlayerModal$ | async)">
+  <div class="modal" @fadeInModal *ngIf="(addPlayerModal$ | async)">
     <app-add-player-modal></app-add-player-modal>
   </div>
-  <div class="modal" *ngIf="(hasGeneralModal$ | async)">
+  <div class="modal" @fadeInModal *ngIf="(hasGeneralModal$ | async)">
     <app-general-modal></app-general-modal>
   </div>
-  <div class="modal" *ngIf="(endGameModal$ | async)">
+  <div class="modal" @fadeInModal *ngIf="(endGameModal$ | async)">
     <app-end-game-modal></app-end-game-modal>
   </div>
-  <div class="modal" *ngIf="(bigCardModal$ | async)">
+  <div class="modal" @fadeInBigCard *ngIf="(bigCardModal$ | async)">
     <app-big-card-modal></app-big-card-modal>
   </div>
   <body

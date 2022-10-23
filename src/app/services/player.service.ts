@@ -88,8 +88,6 @@ export class PlayerService {
     }
 
     const highScore = players[0]['score'];
-    console.log(highScore);
-
     players.filter( player => player.score === highScore);
 
     return players.filter( player => player.score === highScore);

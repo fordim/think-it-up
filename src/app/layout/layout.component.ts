@@ -1,22 +1,19 @@
-import { Component, OnInit } from '@angular/core';
-import {BoardService} from "../services/board.service";
-import {PlayerService} from "../services/player.service";
-import {ModalType} from "../constants/consts";
+import { Component } from '@angular/core';
+import { BoardService } from "../services/board.service";
+import { PlayerService } from "../services/player.service";
+import { ModalType } from "../constants/consts";
 
 @Component({
   selector: 'app-layout',
   templateUrl: './layout.component.html',
   styleUrls: ['./layout.component.scss']
 })
-export class LayoutComponent implements OnInit {
+export class LayoutComponent {
 
   isDeleteForm$ = this._player.isDeleteForm$;
   isMinusScoreForm$ = this._player.isMinusScoreForm$;
 
   constructor(private _board: BoardService, private _player: PlayerService) { }
-
-  ngOnInit(): void {
-  }
 
   public newGame(): void {
     this._board.openNewGameModal();

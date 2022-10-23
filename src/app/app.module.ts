@@ -9,10 +9,11 @@ import { PlayersComponent } from './main-page/players/players.component';
 import { AddPlayerModalComponent } from './main-page/add-player-modal/add-player-modal.component';
 import { BoardComponent } from './main-page/board/board.component';
 import { NewGameModalComponent } from './main-page/new-game-modal/new-game-modal.component';
-import {FormsModule} from "@angular/forms";
+import { FormsModule } from "@angular/forms";
 import { GeneralModalComponent } from './main-page/general-modal/general-modal.component';
 import { EndGameModalComponent } from './main-page/end-game-modal/end-game-modal.component';
 import { BigCardModalComponent } from './main-page/big-card-modal/big-card-modal.component';
+import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { BigCardModalComponent } from './main-page/big-card-modal/big-card-modal
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

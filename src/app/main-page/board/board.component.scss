@@ -50,6 +50,10 @@
   cursor: pointer;
   margin-top: 80px;
   margin-bottom: 10px;
+
+  &:hover {
+    box-shadow: 0 0 10px #00C1FF,0 0 20px #00C1FF,0 0 30px #00C1FF,0 0 40px #00C1FF;
+  }
 }
 
 .card-category {
@@ -85,6 +89,10 @@
 .open-card-category {
   font-size: 25px;
   cursor: pointer;
+
+  &:hover {
+    box-shadow: 0 0 10px #00C1FF,0 0 20px #00C1FF,0 0 30px #00C1FF,0 0 40px #00C1FF;
+  }
 }
 
 .questionIcon {

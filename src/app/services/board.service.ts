@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
-import {BehaviorSubject} from "rxjs";
-import {ACCEPT, FINISH_GAME, ModalType, RESET_GAME} from "../constants/consts";
-import {GeneralModal} from "../constants/interface";
+import { BehaviorSubject } from "rxjs";
+import { ACCEPT, FINISH_GAME, ModalType, RESET_GAME } from "../constants/consts";
+import { GeneralModal } from "../constants/interface";
 
 @Injectable({
   providedIn: 'root'

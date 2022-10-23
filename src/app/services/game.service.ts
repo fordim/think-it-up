@@ -1,10 +1,8 @@
 import { Injectable } from '@angular/core';
-import {BehaviorSubject} from "rxjs";
-import {CATEGORIES} from "../constants/categories-en-const";
-import {LETTERS} from "../constants/letters-en-const";
-import {PlayerService} from "./player.service";
-import {CategoryCard} from "../constants/interface";
-import {BoardService} from "./board.service";
+import { BehaviorSubject } from "rxjs";
+import { CATEGORIES } from "../constants/categories-en-const";
+import { LETTERS } from "../constants/letters-en-const";
+import { CategoryCard } from "../constants/interface";
 
 @Injectable({
   providedIn: 'root'
@@ -16,17 +14,12 @@ export class GameService {
   public openCategory$ = new BehaviorSubject<CategoryCard>({text: '', stars: 1});
   public openLetter$ = new BehaviorSubject<string>('');
 
-  constructor(private _player: PlayerService, private _board: BoardService) {
+  constructor() {
     this.initiateGameService();
   }
 
   public openCategoryCards(): void {
     const categoryCards = this.categoryCards$.value;
-    if (categoryCards.length === 0) {
-      this._board.openEndGameModal();
-      return;
-    }
-
     this.openCategory$.next(categoryCards.pop()!);
     this.categoryCardsCount$.next(this.categoryCards$.value.length)
     this.updateCategoryCards();
@@ -48,9 +41,8 @@ export class GameService {
     this.openLetter$.next('');
   }
 
-  public addScore(playerId: number, score: number): void {
-    const stars = this.openCategory$.value.stars;
-    this._player.changeScore(playerId, score + stars);
+  public getStars(): number {
+    return this.openCategory$.value.stars;
   }
 
   public newGame(): void {
